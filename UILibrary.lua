@@ -504,11 +504,12 @@ function CreateMain(title)
 			parent.TabContainer.Size = UDim2.new(0, parent.TabContainer.UIListLayout.AbsoluteContentSize.X, 0, parent.TabContainer.UIListLayout.AbsoluteContentSize.Y)
 		end
 	end
-    game:GetService("UserInputService"):InputBegan:Connect(function(Key, IsTyping)
-        if IsTyping then return end
-        if Key.KeyCode == Enum.KeyCode.LeftControl then
+    game:GetService("UserInputService").InputBegan:Connect(function(input, isTyping)
+        if isTyping then return end
+        if input.KeyCode == Enum.KeyCode.LeftControl then
             Rodus.Enabled = not Rodus.Enabled
         end
     end)
+    
         tabs = game.CoreGui[title].Top.Container
 end
